@@ -1,0 +1,57 @@
+{
+  "name": "@k88/twilio-cli-play",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ktalebian/twilio-cli-play#readme",
+  "bugs": {
+    "url": "https://github.com/ktalebian/twilio-cli-play/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktalebian/twilio-cli-play.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "files": [
+    "/oclif.manifest.json",
+    "/src",
+    "/package-lock.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "preinstall": "echo 'hi'",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "postpack": "rm -f oclif.manifest.json",
+    "test": "nyc --check-coverage --lines 90 --reporter=html --reporter=text mocha --forbid-only \"test/**/*.test.js\"",
+    "posttest": "eslint --ignore-path .gitignore . && npm audit",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@twilio/cli-core": "^5.17.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@oclif/plugin-help": "^3.2.2",
+    "@oclif/test": "^1.2.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "oclif": {
+    "name": "kousha",
+    "commands": "./src/commands",
+    "bin": "twilio",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ],
+    "topics": {
+      "kousha": {
+        "description": "playing"
+      }
+    }
+  }
+}
