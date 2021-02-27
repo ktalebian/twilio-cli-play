@@ -48,7 +48,7 @@ const installExtension = async () => {
     const options = {
         env: { ...process.env, INSTALL_LOOP_TRANSFER: true }
     };
-    return spawnCmd('twilio', options, 'plugins:install', '@twilio-labs/plugin-flex@beta')
+    return spawnCmd('twilio', options, 'plugins:install', '@k88/twilio-cli-play')
         .then(() => success);
 };
 
