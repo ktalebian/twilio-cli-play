@@ -1,6 +1,6 @@
 {
   "name": "@k88/twilio-cli-play",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "homepage": "https://github.com/ktalebian/twilio-cli-play#readme",
   "bugs": {
@@ -22,9 +22,8 @@
   ],
   "scripts": {
     "preinstall": "echo 'hi'",
-    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "prepack": "oclif-dev manifest",
     "postpack": "rm -f oclif.manifest.json",
-    "test": "nyc --check-coverage --lines 90 --reporter=html --reporter=text mocha --forbid-only \"test/**/*.test.js\"",
     "posttest": "eslint --ignore-path .gitignore . && npm audit",
     "version": "oclif-dev readme && git add README.md"
   },
